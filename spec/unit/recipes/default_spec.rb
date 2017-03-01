@@ -13,6 +13,10 @@ describe 'win_base::default' do
       runner.converge(described_recipe)
     end
 
+    before do
+      stub_command("    $KeyPath = 'HKLM:\\SYSTEM\\CurrentControlSet\\Services\\push-jobs-client'\n    (Get-ItemProperty -Path $KeyPath).ImagePath.Contains('-c C:\\chef/push-jobs-client.rb')\n").and_return(true)
+    end
+
     it 'converges successfully' do
       expect { chef_run }.to_not raise_error
     end
