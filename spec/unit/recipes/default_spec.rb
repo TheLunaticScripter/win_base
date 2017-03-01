@@ -15,6 +15,7 @@ describe 'win_base::default' do
 
     before do
       stub_command("    $KeyPath = 'HKLM:\\SYSTEM\\CurrentControlSet\\Services\\push-jobs-client'\n    (Get-ItemProperty -Path $KeyPath).ImagePath.Contains('-c C:\\chef/push-jobs-client.rb')\n").and_return(true)
+      stub_command("    $KeyPath = 'HKLM:\\SYSTEM\\CurrentControlSet\\Services\\push-jobs-client'\n    (Get-ItemProperty -Path $KeyPath).ImagePath.Contains('-c /etc/chef/push-jobs-client.rb')\n").and_return(true)
     end
 
     it 'converges successfully' do
