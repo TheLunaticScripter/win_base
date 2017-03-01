@@ -5,6 +5,16 @@
     "path": ".delivery/build_cookbook"
   },
   "skip_phases": [],
+  "delivery-truck": {
+    "lint": {
+      "foodcritic": {
+        "ignore_rules": []
+      }
+    },
+    "publish":{
+      "chef_server": "true"
+    }
+  },
   "job_dispatch": {
     "version": "v2"
   },
