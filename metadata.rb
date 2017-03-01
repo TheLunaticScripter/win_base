@@ -4,7 +4,7 @@ maintainer_email 'jsnow@chef.io'
 license 'all_rights'
 description 'Installs/Configures win_base'
 long_description 'Installs/Configures win_base'
-version '0.1.1'
+version '0.1.2'
 
 depends 'push-jobs'
 depends 'audit'
