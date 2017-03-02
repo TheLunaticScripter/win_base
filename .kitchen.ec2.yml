@@ -20,5 +20,5 @@ platforms:
 suites:
   - name: default
     run_list:
-      - recipe[test-build-cookbook::default]
+      - recipe[win_base::default]
     attributes
