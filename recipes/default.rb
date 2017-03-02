@@ -6,3 +6,4 @@
 
 include_recipe 'push-jobs'
 include_recipe 'audit'
+include_recipe 'powershell::powershell5'
