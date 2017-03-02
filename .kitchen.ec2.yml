@@ -1,0 +1,24 @@
+---
+driver:
+  name: ec2
+  region: us-east-1
+  availability_zone: a
+  instance_type: t2.micro
+  image_id: ami-abf616bd
+  tags:
+    Name: <%= ENV['KITCHEN_INSTANCE_NAME'] || 'delivery-kitchen-instance' %>
+
+transport:
+  ssh_key: <%= ENV['KITCHEN_EC2_SSH_KEY_PATH'] %>
+
+provisioner:
+  name: chef_zero
+
+platforms:
+  - name: windows-2012R2
+
+suites:
+  - name: default
+    run_list:
+      - recipe[test-build-cookbook::default]
+    attributes
